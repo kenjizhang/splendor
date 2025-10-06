@@ -1,0 +1,4 @@
+.bankContainer {
+  display: flex;
+  flex-direction: column;
+}

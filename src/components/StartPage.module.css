@@ -1,0 +1,7 @@
+.startContainer {
+  background: linear-gradient(to bottom, red 50%, white 50%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

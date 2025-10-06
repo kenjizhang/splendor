@@ -1,0 +1,5 @@
+.boardContainer {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 4px;
+}
