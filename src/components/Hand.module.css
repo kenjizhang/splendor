@@ -1,0 +1,27 @@
+.handContainer {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 25% 50% 25%;
+}
+
+.left {
+  background: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle {
+  background: lightgreen;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.right {
+  background: lightcoral;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -7,21 +7,22 @@ import styles from './StartPage.module.css';
 
 // form to determine number of players and player names
 export default function StartPage() {
-  const [currentPlayers, setCurrentPlayers] = useState<Player[]>([]);
-  const { addPlayers, fillBank } = useGameStore();
+  const [newPlayers, setNewPlayers] = useState<Player[]>([]);
+  const { updatePlayers, updateBank, assignCurrentPlayer } = useGameStore();
 
   useEffect(() => {
-    if (currentPlayers.length > 0) {
-      addPlayers(currentPlayers);
-      const startingTokens = TOKENS[currentPlayers.length - 2];
-      fillBank(startingTokens);
+    if (newPlayers.length > 0) {
+      updatePlayers(newPlayers);
+      assignCurrentPlayer(newPlayers[0]);
+      const startingTokens = TOKENS[newPlayers.length - 2];
+      updateBank(startingTokens);
     }
-  }, [currentPlayers, addPlayers, fillBank]);
+  }, [newPlayers, updatePlayers, updateBank, assignCurrentPlayer]);
 
   return (
     <>
       <div className={styles.startContainer}>
-        <UserPortal onPlayerChange={setCurrentPlayers} />
+        <UserPortal onPlayerChange={setNewPlayers} />
       </div>
     </>
   );

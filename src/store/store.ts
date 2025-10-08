@@ -22,12 +22,16 @@ export const useGameStore = create<GameState>((set, get) => ({
     gold: 0,
   },
   players: [],
+  currentPlayer: null,
   turn: 0,
   winner: null,
-  addPlayers: (currentPlayers) => {
-    set(() => ({ players: currentPlayers }));
+  updatePlayers: (updatedPlayers) => {
+    set(() => ({ players: updatedPlayers }));
   },
-  fillBank: (tokens) => {
+  assignCurrentPlayer: (currentPlyr) => {
+    set({ currentPlayer: currentPlyr });
+  },
+  updateBank: (tokens) => {
     set(() => ({ bank: tokens }));
   },
   updateDeck: (level, updatedDeck) => {
@@ -64,19 +68,15 @@ export const useGameStore = create<GameState>((set, get) => ({
   },
   drawCardincrease: () => {}, // Implement logic as needed
   refillSlot: () => {}, // Implement logic as needed
-  takeTokens: (tokens) => {
-    // implement token restriction logic with buttons
-    // if no tokens left, no button.
-    // if less than X amt of tokens left and already have that color taken, disable button
+  updatePlayerTokens: (color, amount) => {
     set((state) => {
-      const updatedBank = { ...state.bank };
-
-      for (const color in tokens) {
-        if (updatedBank[color] !== 0) {
-          updatedBank[color] -= tokens[color];
-        }
-      }
-      return { bank: updatedBank };
+      if (!state.currentPlayer) return {};
+      return {
+        currentPlayer: {
+          ...state.currentPlayer,
+          tokens: { ...state.currentPlayer.tokens, [color]: amount },
+        },
+      };
     });
   },
   buyCard: (playerId, card, level, index) => {
@@ -109,6 +109,14 @@ export const useGameStore = create<GameState>((set, get) => ({
     // update score of player***
   },
   nextTurn: () => {
-    // check players for winners (score >= 15)
+    set((state) => {
+      if (!state.currentPlayer) return {};
+      // check players for winners (score >= 15)
+      if (state.currentPlayer.score >= 15) {
+        return { winner: state.currentPlayer };
+      } else {
+        return {};
+      }
+    });
   },
 }));

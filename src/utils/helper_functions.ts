@@ -14,3 +14,7 @@ export function getRandomCards(count: number, cards: CardData[]) {
 
   return [picked, remainder];
 }
+
+export function hasDuplicate(colors: string[]) {
+  return new Set(colors).size !== colors.length;
+}

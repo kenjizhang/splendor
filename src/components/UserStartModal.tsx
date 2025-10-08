@@ -24,7 +24,14 @@ export default function UserStartModal({ onPlayerChange }: UserPortalProps) {
     const playerData: Player[] = playerNames.map((playerName, i) => ({
       id: i,
       name: playerName,
-      tokens: {},
+      tokens: {
+        red: 0,
+        green: 0,
+        blue: 0,
+        black: 0,
+        white: 0,
+        gold: 0,
+      },
       cards: [],
       reserved: [],
       score: 0,
