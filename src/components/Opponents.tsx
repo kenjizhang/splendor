@@ -1,5 +1,6 @@
 import React from 'react';
 import { useGameStore } from '../store/store';
+import styles from './Opponents.module.css';
 
 export default function Opponents() {
   const { players, currentPlayer } = useGameStore();
@@ -9,9 +10,9 @@ export default function Opponents() {
   const opponents = players.filter(({ id }) => id !== currentPlayer.id);
 
   return (
-    <>
+    <div className={styles.opponentsContainer}>
       {opponents.map(({ id, name, tokens, cards, reserved, score }) => (
-        <div key={id}>
+        <div key={id} className={styles.opponentCard}>
           {name}
           {Object.entries(tokens).map(([token, count]) => (
             <span key={token}>
@@ -27,6 +28,6 @@ export default function Opponents() {
           {reserved} */}
         </div>
       ))}
-    </>
+    </div>
   );
 }

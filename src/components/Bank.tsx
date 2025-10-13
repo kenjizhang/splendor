@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { hasDuplicate } from '../utils/helper_functions';
 import { useGameStore } from '../store/store';
 import styles from './Bank.module.css';
@@ -15,6 +15,12 @@ export default function Bank() {
   const { bank, updateBank, currentPlayer, updatePlayerTokens } =
     useGameStore();
 
+  useEffect(() => {
+    if (currentPlayer?.name) {
+      setTokensTaken([]);
+    }
+  }, [currentPlayer?.name]);
+
   const handleClick = (color: string) => {
     if (tokensTaken.length === 3) return;
     if (hasDuplicate(tokensTaken)) return;
@@ -26,7 +32,7 @@ export default function Bank() {
     }
 
     const chosenToken = bank[color];
-    if (chosenToken > 1 && currentPlayer) {
+    if (chosenToken > 0 && currentPlayer) {
       updateBank({ ...bank, [color]: chosenToken - 1 });
       const newAmt = currentPlayer.tokens[color] + 1;
       updatePlayerTokens(color, newAmt);

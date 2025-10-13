@@ -10,7 +10,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "green"
+      "token": "green",
+      "img": "/grass/bellsprout.png"
     },
     {
       "id": 2,
@@ -22,7 +23,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "blue"
+      "token": "blue",
+      "img": "/water/squirtle.png"
     },
     {
       "id": 3,
@@ -34,7 +36,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "white"
+      "token": "white",
+      "img": "/normal/ratatta.png"
     },
     {
       "id": 4,
@@ -46,7 +49,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "black"
+      "token": "black",
+      "img": "/ground/cubone.png"
     },
     {
       "id": 5,
@@ -58,7 +62,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "red"
+      "token": "red",
+      "img": "/fire/charmander.png"
     },
     {
       "id": 6,
@@ -70,7 +75,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "green"
+      "token": "green",
+      "img": "/grass/bellsprout.png"
     },
     {
       "id": 7,
@@ -82,7 +88,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "blue"
+      "token": "blue",
+      "img": "/water/squirtle.png"
     },
     {
       "id": 8,
@@ -94,7 +101,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "white"
+      "token": "white",
+      "img": "/normal/ratatta.png"
     },
     {
       "id": 9,
@@ -106,7 +114,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "black"
+      "token": "black",
+      "img": "/ground/cubone.png"
     },
     {
       "id": 10,
@@ -118,7 +127,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "red"
+      "token": "red",
+      "img": "/fire/charmander.png"
     },
     {
       "id": 11,
@@ -130,7 +140,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "green"
+      "token": "green",
+      "img": "/grass/bellsprout.png"
     },
     {
       "id": 12,
@@ -142,7 +153,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "blue"
+      "token": "blue",
+      "img": "/water/squirtle.png"
     },
     {
       "id": 13,
@@ -154,7 +166,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "white"
+      "token": "white",
+      "img": "/normal/ratatta.png"
     },
     {
       "id": 14,
@@ -166,7 +179,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "black"
+      "token": "black",
+      "img": "/ground/cubone.png"
     },
     {
       "id": 15,
@@ -178,7 +192,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "red"
+      "token": "red",
+      "img": "/fire/charmander.png"
     },
     {
       "id": 16,
@@ -190,7 +205,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "green"
+      "token": "green",
+      "img": "/grass/bellsprout.png"
     },
     {
       "id": 17,
@@ -202,7 +218,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "blue"
+      "token": "blue",
+      "img": "/water/squirtle.png"
     },
     {
       "id": 18,
@@ -214,7 +231,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "white"
+      "token": "white",
+      "img": "/normal/ratatta.png"
     },
     {
       "id": 19,
@@ -226,7 +244,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "black"
+      "token": "black",
+      "img": "/ground/cubone.png"
     },
     {
       "id": 20,
@@ -238,7 +257,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "red"
+      "token": "red",
+      "img": "/fire/charmander.png"
     },
     {
       "id": 21,
@@ -250,7 +270,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "green"
+      "token": "green",
+      "img": "/grass/bellsprout.png"
     },
     {
       "id": 22,
@@ -262,7 +283,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "blue"
+      "token": "blue",
+      "img": "/water/squirtle.png"
     },
     {
       "id": 23,
@@ -274,7 +296,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "white"
+      "token": "white",
+      "img": "/normal/ratatta.png"
     },
     {
       "id": 24,
@@ -286,7 +309,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "black"
+      "token": "black",
+      "img": "/ground/cubone.png"
     },
     {
       "id": 25,
@@ -298,7 +322,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "red"
+      "token": "red",
+      "img": "/fire/charmander.png"
     },
     {
       "id": 26,
@@ -310,7 +335,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "green"
+      "token": "green",
+      "img": "/grass/bellsprout.png"
     },
     {
       "id": 27,
@@ -322,7 +348,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "blue"
+      "token": "blue",
+      "img": "/water/squirtle.png"
     },
     {
       "id": 28,
@@ -334,7 +361,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "white"
+      "token": "white",
+      "img": "/normal/ratatta.png"
     },
     {
       "id": 29,
@@ -346,7 +374,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "black"
+      "token": "black",
+      "img": "/ground/cubone.png"
     },
     {
       "id": 30,
@@ -358,7 +387,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "red"
+      "token": "red",
+      "img": "/fire/charmander.png"
     },
     {
       "id": 31,
@@ -370,7 +400,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "green"
+      "token": "green",
+      "img": "/grass/bellsprout.png"
     },
     {
       "id": 32,
@@ -382,7 +413,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "blue"
+      "token": "blue",
+      "img": "/water/squirtle.png"
     },
     {
       "id": 33,
@@ -394,7 +426,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "white"
+      "token": "white",
+      "img": "/normal/ratatta.png"
     },
     {
       "id": 34,
@@ -406,7 +439,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "black"
+      "token": "black",
+      "img": "/ground/cubone.png"
     },
     {
       "id": 35,
@@ -418,7 +452,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "red"
+      "token": "red",
+      "img": "/fire/charmander.png"
     },
     {
       "id": 36,
@@ -430,7 +465,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "green"
+      "token": "green",
+      "img": "/grass/bellsprout.png"
     },
     {
       "id": 37,
@@ -442,7 +478,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "blue"
+      "token": "blue",
+      "img": "/water/squirtle.png"
     },
     {
       "id": 38,
@@ -454,7 +491,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "white"
+      "token": "white",
+      "img": "/normal/ratatta.png"
     },
     {
       "id": 39,
@@ -466,7 +504,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "black"
+      "token": "black",
+      "img": "/ground/cubone.png"
     },
     {
       "id": 40,
@@ -478,7 +517,8 @@
         "black": 0
       },
       "points": 0,
-      "token": "red"
+      "token": "red",
+      "img": "/fire/charmander.png"
     }
   ],
   "level_2": [
