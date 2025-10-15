@@ -25,3 +25,56 @@
   justify-content: center;
   align-items: center;
 }
+
+/* ICON CSS */
+.tokenContainer {
+  display: flex;
+}
+
+.fireIcon {
+  border: 4px solid red;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.grassIcon {
+  border: 4px solid green;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.waterIcon {
+  border: 4px solid blue;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.groundIcon {
+  border: 4px solid black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.normalIcon {
+  border: 4px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.dragonIcon {
+  border: 4px solid gold;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}

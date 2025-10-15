@@ -1,39 +1,21 @@
 import React from 'react';
 import { useGameStore } from '../store/store';
 import styles from './Hand.module.css';
+import FireIcon from '../assets/Fire.ico';
+import GrassIcon from '../assets/Grass.ico';
+import GroundIcon from '../assets/Ground.ico';
+import NormalIcon from '../assets/Normal.ico';
+import WaterIcon from '../assets/Water.ico';
+import DragonIcon from '../assets/Dragon.ico';
 
 export default function Hand() {
-  const {
-    currentPlayer,
-    nextTurn,
-    assignCurrentPlayer,
-    players,
-    updatePlayers,
-  } = useGameStore();
+  const { currentPlayer, nextTurn } = useGameStore();
 
   // Early return if no current player
   if (!currentPlayer) return null;
 
   // Destructure with TypeScript type safety
   const { id, name, tokens, cards, reserved, score } = currentPlayer;
-
-  const handleEndTurn = () => {
-    const updatedPlayers = players.map((player) =>
-      player.id === currentPlayer.id ? currentPlayer : player
-    );
-    updatePlayers(updatedPlayers);
-    nextTurn();
-    const nextId = id + 1;
-    if (nextId > players.length - 1) {
-      assignCurrentPlayer(players[0]);
-    } else {
-      assignCurrentPlayer(players[nextId]);
-    }
-  };
-
-  if (tokens) {
-    console.log(tokens, Object.entries(tokens));
-  }
 
   return (
     <>
@@ -53,16 +35,39 @@ export default function Hand() {
             ))}
           </div>
           <div className={styles.middle}>
-            {tokens &&
-              Object.entries(tokens).map(([token, count]) => (
-                <span key={token}>
-                  {token}: {count}{' '}
-                </span>
-              ))}
-            {cards?.map((card) => (
-              <div>
-                {card.token}
-                {card.points}
+            {tokens && (
+              <div className={styles.tokenContainer}>
+                <div>
+                  <span>{tokens['red']}</span>
+                  <img src={FireIcon} className={styles.fireIcon} />
+                </div>
+                <div>
+                  <span>{tokens['green']}</span>
+                  <img src={GrassIcon} className={styles.grassIcon} />
+                </div>
+                <div>
+                  <span>{tokens['blue']}</span>
+                  <img src={WaterIcon} className={styles.waterIcon} />
+                </div>
+                <div>
+                  <span>{tokens['black']}</span>
+                  <img src={GroundIcon} className={styles.groundIcon} />
+                </div>
+                <div>
+                  <span>{tokens['white']}</span>
+                  <img src={NormalIcon} className={styles.normalIcon} />
+                </div>
+                <div>
+                  <span>{tokens['gold']}</span>
+                  <img src={DragonIcon} className={styles.dragonIcon} />
+                </div>
+              </div>
+            )}
+            {cards?.map(({ id, token, points }) => (
+              <div id={id.toString()}>
+                CARDS:
+                <span>TOKEN: {token}</span>
+                <span>POINTS: {points}</span>
               </div>
             ))}
           </div>
@@ -71,7 +76,7 @@ export default function Hand() {
               <strong>{name}</strong>
             </p>
             <p>POINTS: {score} / 15</p>
-            <button onClick={handleEndTurn}>End Turn</button>
+            <button onClick={() => nextTurn()}>End Turn</button>
           </div>
         </div>
       )}

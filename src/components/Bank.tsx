@@ -22,12 +22,18 @@ export default function Bank() {
   }, [currentPlayer?.name]);
 
   const handleClick = (color: string) => {
+    // grabbed max tokens
     if (tokensTaken.length === 3) return;
+    // disable pickup for two of same color
     if (hasDuplicate(tokensTaken)) return;
-
     // handles same color pickup with 2 tokens
     if (tokensTaken.includes(color) && tokensTaken.length > 1) {
       console.log('already grabbed two different colors');
+      return;
+    }
+    // handle same color pickup with insufficient bank tokens
+    if (tokensTaken.includes(color) && bank[color] < 3) {
+      console.log('cannot grab two of the same tokens with remaining bank');
       return;
     }
 
@@ -46,52 +52,52 @@ export default function Bank() {
     <>
       <div className={styles.bankContainer}>
         <div>
+          <span>{bank['red']}</span>
           <img
             src={FireIcon}
             className={styles.fireIcon}
             onClick={() => handleClick('red')}
           />
-          <span>{bank['red']}</span>
         </div>
         <div>
+          <span>{bank['green']}</span>
           <img
             src={GrassIcon}
             className={styles.grassIcon}
             onClick={() => handleClick('green')}
           />
-          <span>{bank['green']}</span>
         </div>
         <div>
+          <span>{bank['blue']}</span>
           <img
             src={WaterIcon}
             className={styles.waterIcon}
             onClick={() => handleClick('blue')}
           />
-          <span>{bank['blue']}</span>
         </div>
         <div>
+          <span>{bank['black']}</span>
           <img
             src={GroundIcon}
             className={styles.groundIcon}
             onClick={() => handleClick('black')}
           />
-          <span>{bank['black']}</span>
         </div>
         <div>
+          <span>{bank['white']}</span>
           <img
             src={NormalIcon}
             className={styles.normalIcon}
             onClick={() => handleClick('white')}
           />
-          <span>{bank['white']}</span>
         </div>
         <div>
+          <span>{bank['gold']}</span>
           <img
             src={DragonIcon}
             className={styles.dragonIcon}
             onClick={() => handleClick('gold')}
           />
-          <span>{bank['gold']}</span>
         </div>
         <div>
           TAKEN:{' '}

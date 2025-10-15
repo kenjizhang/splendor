@@ -20,12 +20,14 @@ export default function Opponents() {
             </span>
           ))}
           {score}
-          {/* {cards.map((card) => (
-            <div>
-              {card}
-              </div>
+          {cards.map(({ id, token, points }) => (
+            <div id={id.toString()}>
+              CARDS:
+              <span>TOKEN: {token}</span>
+              <span>POINTS: {points}</span>
+            </div>
           ))}
-          {reserved} */}
+          {/* {reserved} */}
         </div>
       ))}
     </div>

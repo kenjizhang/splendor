@@ -17,8 +17,8 @@ export default function Card(card: CardData) {
           <li key='red'>red: {cost.red}</li>
           <li key='green'>green: {cost.green}</li>
           <li key='blue'>blue: {cost.blue}</li>
-          <li key='white'>white: {cost.white}</li>
           <li key='black'>black: {cost.black}</li>
+          <li key='white'>white: {cost.white}</li>
         </ul>
       </div>
     </div>

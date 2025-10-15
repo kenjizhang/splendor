@@ -8,16 +8,16 @@ import styles from './StartPage.module.css';
 // form to determine number of players and player names
 export default function StartPage() {
   const [newPlayers, setNewPlayers] = useState<Player[]>([]);
-  const { updatePlayers, updateBank, assignCurrentPlayer } = useGameStore();
+  const { updatePlayers, updateBank, updateCurrentPlayer } = useGameStore();
 
   useEffect(() => {
     if (newPlayers.length > 0) {
       updatePlayers(newPlayers);
-      assignCurrentPlayer(newPlayers[0]);
+      updateCurrentPlayer(newPlayers[0]);
       const startingTokens = TOKENS[newPlayers.length - 2];
       updateBank(startingTokens);
     }
-  }, [newPlayers, updatePlayers, updateBank, assignCurrentPlayer]);
+  }, [newPlayers, updatePlayers, updateBank, updateCurrentPlayer]);
 
   return (
     <>

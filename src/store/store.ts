@@ -28,7 +28,7 @@ export const useGameStore = create<GameState>((set, get) => ({
   updatePlayers: (updatedPlayers) => {
     set(() => ({ players: updatedPlayers }));
   },
-  assignCurrentPlayer: (currentPlyr) => {
+  updateCurrentPlayer: (currentPlyr) => {
     set({ currentPlayer: currentPlyr });
   },
   updateBank: (tokens) => {
@@ -79,43 +79,23 @@ export const useGameStore = create<GameState>((set, get) => ({
       };
     });
   },
-  buyCard: (playerId, card, level, index) => {
-    // check that player has enough tokens
-    set((state) => {
-      const updatedBank = { ...state.bank };
-      const cardCost = card.cost;
-      const playerIndex = state.players.findIndex(({ id }) => playerId === id);
-      if (playerIndex !== -1) {
-        const updatedPlayers = [...state.players];
-        const updatedCurrentPlayer = { ...updatedPlayers[playerIndex] };
-        const updatedCurrentPlayerTokens = { ...updatedCurrentPlayer.tokens };
-        if (updatedCurrentPlayerTokens) {
-          for (const color of Object.keys(cardCost) as Array<
-            keyof typeof cardCost
-          >) {
-            if (updatedCurrentPlayerTokens[color] >= cardCost[color]) {
-              updatedCurrentPlayerTokens[color] -= cardCost[color];
-              updatedBank[color] += cardCost[color];
-            }
-          }
-          updatedCurrentPlayer.tokens = updatedCurrentPlayerTokens;
-        }
-        updatedPlayers[playerIndex] = updatedCurrentPlayer;
-        return { bank: updatedBank, players: updatedPlayers };
-      }
-      // Always return a valid Partial<GameState>
-      return {};
-    });
-    // update score of player***
-  },
   nextTurn: () => {
     set((state) => {
       if (!state.currentPlayer) return {};
+      const updatedPlayers = state.players.map((player) =>
+        player.id === state.currentPlayer!.id ? state.currentPlayer! : player
+      );
       // check players for winners (score >= 15)
       if (state.currentPlayer.score >= 15) {
         return { winner: state.currentPlayer };
       } else {
-        return {};
+        const nextId = state.currentPlayer.id + 1;
+        if (nextId > state.players.length - 1) {
+          state.updateCurrentPlayer(state.players[0]);
+        } else {
+          state.updateCurrentPlayer(state.players[nextId]);
+        }
+        return { players: updatedPlayers };
       }
     });
   },

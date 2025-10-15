@@ -17,7 +17,7 @@ export type GameState = {
 
   // Actions
   updatePlayers: (currentPlayers: Player[]) => void;
-  assignCurrentPlayer: (currentPlyr: Player) => void;
+  updateCurrentPlayer: (currentPlyr: Player) => void;
   updateBank: (tokens: Record<string, number>) => void;
   updateDeck: (level: 1 | 2 | 3, updatedDeck: CardData[]) => CardData[] | null;
   updateActive: (
@@ -27,12 +27,6 @@ export type GameState = {
   drawCard: (level: 1 | 2 | 3) => CardData | null;
   refillSlot: (level: 1 | 2 | 3, index: number) => void;
   updatePlayerTokens: (color: string, amount: number) => void;
-  buyCard: (
-    playerId: string,
-    card: CardData,
-    level: 1 | 2 | 3,
-    index: number
-  ) => void;
   nextTurn: () => void;
 };
 
