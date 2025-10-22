@@ -5,5 +5,5 @@ export const useModalStore = create<ModalState>((set) => ({
   isOpen: false,
   card: null,
   openModal: (card: CardData) => set({ isOpen: true, card }),
-  closeModal: () => set({ isOpen: false }),
+  closeModal: () => set({ isOpen: false, card: null }),
 }));

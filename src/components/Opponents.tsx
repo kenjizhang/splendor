@@ -22,7 +22,6 @@ export default function Opponents() {
           {score}
           {cards.map(({ id, token, points }) => (
             <div id={id.toString()}>
-              CARDS:
               <span>TOKEN: {token}</span>
               <span>POINTS: {points}</span>
             </div>

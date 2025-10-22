@@ -5,12 +5,20 @@ import styles from './CardModal.module.css';
 
 export default function CardModal() {
   const { isOpen, card, closeModal } = useModalStore();
-  const { nextTurn, currentPlayer, bank, updateBank, updateCurrentPlayer } =
-    useGameStore();
+  const {
+    nextTurn,
+    currentPlayer,
+    bank,
+    updateBank,
+    updateCurrentPlayer,
+    drawCard,
+    active,
+    updateActive,
+  } = useGameStore();
   if (!card || !isOpen) {
     return null;
   }
-  const { id, points, token, cost } = card;
+  const { id, points, token, cost, level } = card;
 
   const handleBuy = () => {
     // check that player has enough token
@@ -76,14 +84,19 @@ export default function CardModal() {
       cards: updatedBuyerCards,
       score: currentPlayer.score + card.points,
     };
-    console.log(updatedPlayer);
 
-    console.log('BEFORE', currentPlayer);
     updateCurrentPlayer(updatedPlayer);
     updateBank(updatedBank);
 
-    console.log('CURRENT: ', currentPlayer);
     closeModal();
+    // SET NEW CARD
+    const newCard = drawCard(level);
+    const updatedActive = active[`level_${level}`].filter(
+      (card) => card.id !== id
+    );
+    if (newCard && updateActive) {
+      updateActive(level, [...updatedActive, newCard]);
+    }
     nextTurn();
   };
 

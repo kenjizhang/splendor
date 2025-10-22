@@ -72,9 +72,9 @@ export default function Hand() {
             ))}
           </div>
           <div className={styles.right}>
-            <p>
+            <h1>
               <strong>{name}</strong>
-            </p>
+            </h1>
             <p>POINTS: {score} / 15</p>
             <button onClick={() => nextTurn()}>End Turn</button>
           </div>

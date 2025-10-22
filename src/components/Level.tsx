@@ -3,6 +3,8 @@ import type { CardData, LevelProps } from '../types';
 import { useGameStore } from '../store/store';
 import { getRandomCards } from '../utils/helper_functions';
 import Card from './Card';
+import cardBack from '../assets/pokemonCardBack.webp';
+import styles from './Level.module.css';
 
 export const Level: React.FC<LevelProps> = ({ level }): JSX.Element => {
   const LEVEL = `level_${level}`;
@@ -36,22 +38,23 @@ export const Level: React.FC<LevelProps> = ({ level }): JSX.Element => {
   };
 
   return (
-    <div style={styles.levelContainer}>
-      <div>CARDS REMAINING: {deck.length}</div>
+    <div className={styles.levelContainer}>
+      <div className={styles.remainingCardsContainer}>
+        <img src={cardBack} alt='Card Back' className={styles.cardBackImg} />
+        CARDS REMAINING: {deck.length}
+      </div>
       {active.map(({ id, cost, points, token }) => (
-        <Card key={id} id={id} points={points} cost={cost} token={token} />
+        <Card
+          key={id}
+          id={id}
+          points={points}
+          cost={cost}
+          token={token}
+          level={level}
+        />
       ))}
     </div>
   );
 };
 
 export default Level;
-
-const styles: {
-  levelContainer: React.CSSProperties;
-} = {
-  levelContainer: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(5, 1fr)',
-  },
-};

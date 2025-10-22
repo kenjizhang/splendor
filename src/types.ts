@@ -43,6 +43,7 @@ export interface CardData {
   cost: Cost;
   points: number;
   token: string;
+  level: 1 | 2 | 3;
 }
 
 export interface LevelProps {

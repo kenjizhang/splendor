@@ -1,0 +1,17 @@
+.levelContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.remainingCardsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardBackImg {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
